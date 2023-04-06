@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", function () {
 
     // Click event for sidebar toggle
     document.querySelector('#sidenavCollapse').addEventListener('click', function () {
