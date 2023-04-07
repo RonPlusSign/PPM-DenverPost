@@ -21,8 +21,15 @@ header {
 
   .nav-primary-top {
     height: 4em;
-    max-width: 95%;
     margin: 0 auto;
+    padding: 0 2.5%;
+
+    &.fixed-top {
+      position: fixed;
+      top: 0;
+      background-color: white;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, .25);
+    }
 
     .btn.action {
       &:hover {
@@ -39,27 +46,46 @@ header {
         margin-right: 5px;
       }
     }
+
+    img#sticky-navbar-logo {
+      max-width: 400px;
+
+      &.hidden {
+        display: none;
+      }
+    }
   }
 
   .nav-primary-middle {
     height: 5em;
+
+    &.hidden {
+      opacity: 0;
+    }
 
     img#logo {
       max-width: 400px;
     }
   }
 
-  .nav-primary-bottom .nav-item a.nav-link {
-    height: 3em;
-    line-height: 3em;
-    font-size: 15px;
-    font-weight: 600;
-    color: black;
-    padding: 0 0.9em;
 
-    &:hover {
-      color: #c81632;
-      text-decoration: underline;
+  .nav-primary-bottom {
+    &.hidden {
+      opacity: 0;
+    }
+
+    .nav-item a.nav-link {
+      height: 3em;
+      line-height: 3em;
+      font-size: 15px;
+      font-weight: 600;
+      color: black;
+      padding: 0 0.9em;
+
+      &:hover {
+        color: #c81632;
+        text-decoration: underline;
+      }
     }
   }
 }

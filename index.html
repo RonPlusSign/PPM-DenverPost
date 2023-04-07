@@ -40,7 +40,7 @@
 <body>
 <!-- Header -->
 <header>
-    <div class="nav-primary-top row p-2">
+    <div id="sticky-navbar" class="nav-primary-top row align-content-center">
         <div class="col col-4 d-flex justify-content-start">
             <button type="button" class="btn" id="sidenavCollapse">
                 <i class="fas fa-bars"></i>
@@ -48,7 +48,9 @@
             </button>
         </div>
 
-        <div class="col col-4"></div>
+        <div class="col col-4 d-flex d-inline-flex justify-content-center">
+            <img id="sticky-navbar-logo" src="images/dp-logo.svg" alt="Denver Post Logo" class="hidden"/>
+        </div>
 
         <div class="col col-4 d-flex justify-content-end">
             <button type="button" class="btn action mx-2">
