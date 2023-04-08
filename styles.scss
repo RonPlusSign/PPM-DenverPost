@@ -146,13 +146,36 @@ footer {
     text-decoration: none;
   }
 
+  img.logo {
+    margin: 0 2.5%;
+
+    // Footer logo image width based on screen size
+    @media only screen and (max-width: 638px) {
+      width: 95%;
+      max-width: 400px;
+      display: block;
+      margin: auto;
+    }
+
+    @media only screen and (min-width: 639px) and (max-width: 799px) {
+      width: 40%;
+    }
+
+    @media only screen and (min-width: 800px) and (max-width: 1039px) {
+      width: 28%;
+    }
+
+    @media only screen and (min-width: 1040px) {
+      width: 20%;
+    }
+  }
+
   .footer-menus {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     margin: 0 auto 2em auto;
     padding-left: 0;
-
 
     // Footer column width based on screen size
     @media only screen and (max-width: 638px) {
