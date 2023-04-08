@@ -1,15 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-
-    // Click event for sidebar toggle
-    document.querySelector('#sidenavCollapse').addEventListener('click', function () {
-        document.querySelector('#sidenav').classList.toggle('active');
-
-        // Change icon
-        document.querySelector('#sidenavCollapse').children[0].classList.toggle('fa-bars');
-        document.querySelector('#sidenavCollapse').children[0].classList.toggle('fa-times');
-    });
-});
-
 // Sticky navbar on scroll
 window.onscroll = function () {
     // If page is scrolled, show navbar as fixed and add logo to it
@@ -20,3 +8,21 @@ window.onscroll = function () {
     document.querySelector('#sticky-navbar').classList.toggle('fixed-top', scroll > scrollThreshold);
     document.querySelector('#sticky-navbar-logo').classList.toggle('hidden', scroll <= scrollThreshold);
 };
+
+// Show right sidenav with login/subscribe and change chevron
+function onUserIconClick(element) {
+    // Change chevron
+    element.children[1].classList.toggle('fa-chevron-down');
+    element.children[1].classList.toggle('fa-chevron-up');
+    // TODO: Show right sidenav
+}
+
+// Click event for sidebar toggle
+function onSidenavCollapseClick(sidenavCollapseBtn) {
+    document.querySelector('#sidenav-left').classList.toggle('active');
+
+    // Change icon
+    sidenavCollapseBtn.children[0].classList.toggle('fa-bars');
+    sidenavCollapseBtn.children[0].classList.toggle('fa-times');
+    // TODO: Show left sidenav
+}

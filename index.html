@@ -40,33 +40,48 @@
 <body>
 <!-- Header -->
 <header>
-    <div id="sticky-navbar" class="nav-primary-top row align-content-center">
-        <div class="col col-4 d-flex justify-content-start">
-            <button type="button" class="btn" id="sidenavCollapse">
-                <i class="fas fa-bars"></i>
+    <div id="sticky-navbar" class="nav-primary-top row align-content-center container">
+        <div class="col col-3 col-md-4 p-0 d-flex justify-content-start">
+            <!-- TODO: Make left sidenav work -->
+            <button type="button" class="btn" id="sidenavCollapse" onclick="onSidenavCollapseClick()">
+                <i class="fas fa-bars m-auto"></i>
                 <span>All sections</span>
             </button>
         </div>
 
-        <div class="col col-4 d-flex d-inline-flex justify-content-center">
-            <img id="sticky-navbar-logo" src="images/dp-logo.svg" alt="Denver Post Logo" class="hidden"/>
+        <div class="col col-6 col-md-4 d-flex d-inline-flex p-0 justify-content-center">
+            <img id="sticky-navbar-logo" src="images/dp-logo.svg" alt="Denver Post Logo" class="w-100 logo hidden"/>
         </div>
 
-        <div class="col col-4 d-flex justify-content-end">
-            <button type="button" class="btn action mx-2">
+        <div class="col col-3 col-md-4 d-flex justify-content-end">
+            <button type="button" class="btn rounded-1 action mx-2">
                 <a class="link-light link-underline link-underline-opacity-0" href="#">Subscribe</a>
             </button>
-            <button type="button" class="btn action mx-2">
+            <button type="button" class="btn rounded-1 action mx-2">
                 <a class="link-light link-underline link-underline-opacity-0" href="#">Log in </a>
             </button>
+
+            <!-- TODO: Make right sidenav work -->
+            <button type="button" class="btn user-menu p-0" onclick="onUserIconClick(this)">
+                <i class="fas fa-user"></i>
+                <i class="chevron fas fa-chevron-down"></i>
+            </button>
+
+            <!-- TODO: Make searchbar work -->
             <button type="button" class="btn">
                 <i class="fas fa-search"></i>
             </button>
         </div>
     </div>
 
-    <div class="nav-primary-middle d-flex justify-content-center">
-        <img id="logo" src="images/dp-logo.svg" alt="Denver Post Logo"/>
+    <div class="nav-primary-middle d-flex justify-content-center row">
+        <div class="col col-4">
+            <!-- TODO: Insert weather widget -->
+        </div>
+        <div class="col col-4">
+            <img id="logo" src="images/dp-logo.svg" alt="Denver Post Logo" class="w-100 logo"/>
+        </div>
+        <div class="col col-4"></div>
     </div>
 
     <div class="nav-primary-bottom border-bottom border-dark-subtle">
@@ -86,8 +101,12 @@
         </nav>
     </div>
 
-    <div id="sidenav">
-        <!-- TODO: Add sidenav -->
+    <div id="sidenav-left">
+        <!-- TODO: Add left sidenav -->
+    </div>
+
+    <div id="sidenav-right">
+        <!-- TODO: Add right sidenav -->
     </div>
 </header>
 
@@ -119,8 +138,9 @@
     <div class="main-footer border-bottom">
         <ul class="footer-menus">
             <li class="menu-item">
-                <p>Subscribe</p>
-                <span class="expander"> <a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></span>
+                <p class="text-uppercase">Subscribe</p>
+                <i class="fas fa-caret-down"> <a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></i>
+                <!-- TODO: Hide list on load -->
                 <ul class="footer-menu">
                     <li class="submenu-item"><a href="#">News Alerts</a></li>
                     <li class="submenu-item"><a href="#">Submit a News Tip</a></li>
@@ -128,8 +148,8 @@
             </li>
 
             <li class="menu-item">
-                <p>Member Services</p>
-                <span class="expander"><a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></span>
+                <p class="text-uppercase">Member Services</p>
+                <i class="fas fa-caret-down"><a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></i>
                 <ul class="footer-menu">
                     <li class="submenu-item"><a href="#">Become a Member</a></li>
                     <li class="submenu-item"><a href="#">Place a Hold</a></li>
@@ -137,8 +157,8 @@
                 </ul>
             </li>
             <li class="menu-item ">
-                <p>Classifieds</p>
-                <span class="expander"><a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></span>
+                <p class="text-uppercase">Classifieds</p>
+                <i class="fas fa-caret-down"><a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></i>
                 <ul class="footer-menu">
                     <li class="submenu-item"><a href="#">Autos</a></li>
                     <li class="submenu-item"><a href="#">Real Estate</a></li>
@@ -146,8 +166,8 @@
                 </ul>
             </li>
             <li class="menu-item ">
-                <p>Contact Us</p>
-                <span class="expander"><a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></span>
+                <p class="text-uppercase">Contact Us</p>
+                <i class="fas fa-caret-down"><a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></i>
                 <ul class="footer-menu">
                     <li class="submenu-item"><a href="#">Careers</a></li>
                     <li class="submenu-item"><a href="#">Denver Post Store</a></li>
@@ -159,8 +179,8 @@
                 </ul>
             </li>
             <li class="menu-item">
-                <p>Today’s Front Page</p>
-                <span class="expander"><a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></span>
+                <p class="text-uppercase">Today’s Front Page</p>
+                <i class="fas fa-caret-down"><a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></i>
                 <ul class="footer-menu">
                     <li class="submenu-item"><a href="#">Back Issues</a></li>
                     <li class="submenu-item"><a href="#">Archives</a></li>
@@ -168,7 +188,7 @@
                 </ul>
             </li>
             <li class="menu-item">
-                <p>Follow Us</p>
+                <p class="text-uppercase">Follow Us</p>
                 <div class="footer-follow">
                     <ul class="footer-menu d-flex p-0">
                         <li class="submenu-item d-inline-block rounded-circle icon">
@@ -185,7 +205,7 @@
                         </li>
                     </ul>
                 </div>
-                <button class="btn action subscribe-button"><span>Subscribe Now</span></button>
+                <button class="btn action subscribe-button w-100"><span class="text-uppercase">Subscribe Now</span></button>
             </li>
         </ul>
     </div>
