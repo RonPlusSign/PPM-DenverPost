@@ -2,7 +2,12 @@
 
 @font-face {
   font-family: DroidSans;
-  src: url('fonts/droid-sans.ttf') format('truetype');
+  src: url('fonts/DroidSans.woff') format('woff');
+}
+
+@font-face {
+  font-family: DroidSerif;
+  src: url('fonts/DroidSerif.woff') format('woff');
 }
 
 *:not(i) { // Change all fonts except icons
@@ -159,45 +164,52 @@ main {
     font-size: 20px;
   }
 
-  .recommended-for-you h3.title {
-    color: #8e1024;
-  }
+  .counter-list {
 
-  ul.counter {
-    columns: 2;
-
-    @media only screen and (max-width: 639px) {
-      columns: 1;
+    h3.title {
+      color: #8e1024;
     }
 
-    li {
-      counter-increment: item;
-      position: relative;
-      list-style: none;
-      font-size: 16px;
-      display: inline-flex;
-      padding: 1em 0 0.3em 0;
+    ul.counter {
+      columns: 2;
 
-      &:before {
-        // Insert counter before each list item
-        content: counter(item);
-        background-color: #8e1024;
-        color: white;
-        font-weight: bolder;
-        min-width: 32px !important;
-        max-width: 32px !important;
-        min-height: 32px !important;
-        max-height: 32px !important;
-        line-height: 32px;
-        text-align: center;
-        border-radius: 50%;
-        margin-right: 0.6em;
-        font-size: 20px;
+      @media only screen and (max-width: 639px) {
+        columns: 1;
       }
 
-      a {
-        &:hover {
-          color: #c81632;
+      li {
+        counter-increment: item;
+        position: relative;
+        list-style: none;
+        font-size: 16px;
+        display: inline-flex;
+        padding: 1em 0 0.3em 0;
+
+        &:before {
+          // Insert counter before each list item
+          content: counter(item);
+          background-color: #8e1024;
+          color: white;
+          font-weight: bolder;
+          min-width: 32px !important;
+          max-width: 32px !important;
+          min-height: 32px !important;
+          max-height: 32px !important;
+          line-height: 32px;
+          text-align: center;
+          border-radius: 50%;
+          margin-right: 0.6em;
+          font-size: 20px;
+        }
+
+        a {
+          @media only screen and (max-width: 1039px) {
+            font-family: DroidSerif, Helvetica, sans-serif !important;
+          }
+
+          &:hover {
+            color: #c81632;
+          }
         }
       }
     }
