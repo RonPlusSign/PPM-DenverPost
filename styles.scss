@@ -10,7 +10,7 @@
   src: url('fonts/DroidSerif.woff') format('woff');
 }
 
-*:not(i) { // Change all fonts except icons
+*:not(i) { // Default font (except for icons)
   font-family: DroidSans, Helvetica, sans-serif !important;
 }
 
@@ -230,8 +230,6 @@ footer {
   border-top: 1px solid #ababab;
   box-shadow: 0 1px 8px 0 rgba(0, 0, 0, .35) inset;
 
-  // FIXME: Subscribe and social icons don't change color on hover as original
-
   ul { // Remove default bullets
     list-style: none;
   }
@@ -349,6 +347,7 @@ footer {
 
         li.submenu-item {
           margin: 0.7em 0;
+          transition: background-color 0.15s ease-in-out;
 
           &.icon {
             height: 2em;
@@ -356,6 +355,10 @@ footer {
             background-color: #8e1024;
             margin-right: 0.5em;
             font-size: 1.25em;
+
+            &:hover {
+              background-color: #c81632 !important;
+            }
 
             a {
               height: 2em;
@@ -380,6 +383,11 @@ footer {
         @media only screen and (max-width: 638px) {
           padding: 5%;
           height: auto;
+        }
+
+        &:hover {
+          background-color: #c81632;
+          text-decoration: underline;
         }
       }
     }
