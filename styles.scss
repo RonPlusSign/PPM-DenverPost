@@ -123,9 +123,37 @@ header {
     }
   }
 
+  .trending {
+    font-size: 15px;
+    max-width: 85em;
+    margin: 0 auto;
+    padding: 1em 0.65em;
+
+    p {
+      color: #8e1024;
+      font-weight: 600;
+    }
+
+    .usa-flag {
+      width: 16px;
+    }
+
+    @media only screen and (max-width: 1039px) { // Hide if not in wide screen
+      display: none !important;
+    }
+
+    a:hover {
+      color: #8e1024;
+    }
+  }
+
 }
 
-body {
+main {
+  margin: auto;
+  padding: 1em 0.65em;
+  max-width: 80em;
+
   #cookies {
     position: fixed;
     width: 40px;
@@ -140,6 +168,8 @@ footer {
   background-color: #f5f5f5;
   border-top: 1px solid #ababab;
   box-shadow: 0 1px 8px 0 rgba(0, 0, 0, .35) inset;
+
+  // FIXME: Subscribe and social icons don't change color on hover as original
 
   ul { // Remove default bullets
     list-style: none;
@@ -172,6 +202,11 @@ footer {
     @media only screen and (min-width: 1040px) {
       width: 20%;
     }
+  }
+
+  .main-footer {
+    max-width: 95em;
+    margin: auto;
   }
 
   .footer-menus {
