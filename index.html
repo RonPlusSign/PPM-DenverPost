@@ -43,7 +43,7 @@
     <div id="sticky-navbar" class="nav-primary-top row align-content-center container">
         <div class="col col-3 col-md-4 p-0 d-flex justify-content-start">
             <!-- TODO: Make left sidenav work -->
-            <button type="button" class="btn" id="sidenavCollapse" onclick="onSidenavCollapseClick()">
+            <button type="button" class="btn" id="sidenavCollapse" onclick="onSidenavCollapseClick(this)">
                 <i class="fas fa-bars m-auto"></i>
                 <span>All sections</span>
             </button>
@@ -53,7 +53,7 @@
             <img id="sticky-navbar-logo" src="images/dp-logo.svg" alt="Denver Post Logo" class="w-100 logo hidden"/>
         </div>
 
-        <div class="col col-3 col-md-4 d-flex justify-content-end">
+        <div class="col col-3 col-md-4 d-flex align-items-center justify-content-end">
             <button type="button" class="btn rounded-1 action mx-2">
                 <a class="link-light link-underline link-underline-opacity-0" href="#">Subscribe</a>
             </button>
@@ -139,37 +139,51 @@
         <img src="images/dp-logo.svg" alt="Denver Post Logo" class="logo"/>
         <ul class="footer-menus">
             <li class="menu-item">
-                <p class="text-uppercase">Subscribe</p>
-                <i class="fas fa-caret-down"> <a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></i>
-                <!-- TODO: Hide list on load -->
-                <ul class="footer-menu">
+                <div class="row">
+                    <p class="text-uppercase col col-9">Subscribe</p>
+                    <i class="fas fa-caret-down col col-3 d-flex align-self-center justify-content-end" onclick="toggleFooterMenu(this)">
+                        <a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a>
+                    </i>
+                </div>
+                <ul class="footer-menu shrink">
                     <li class="submenu-item"><a href="#">News Alerts</a></li>
                     <li class="submenu-item"><a href="#">Submit a News Tip</a></li>
                 </ul>
             </li>
-
             <li class="menu-item">
-                <p class="text-uppercase">Member Services</p>
-                <i class="fas fa-caret-down"><a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></i>
-                <ul class="footer-menu">
+                <div class="row">
+                    <p class="text-uppercase col col-9">Member Services</p>
+                    <i class="fas fa-caret-down col col-3 d-flex align-self-center justify-content-end" onclick="toggleFooterMenu(this)">
+                        <a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a>
+                    </i>
+                </div>
+                <ul class="footer-menu shrink">
                     <li class="submenu-item"><a href="#">Become a Member</a></li>
                     <li class="submenu-item"><a href="#">Place a Hold</a></li>
                     <li class="submenu-item"><a href="#">Digital Replica Edition</a></li>
                 </ul>
             </li>
-            <li class="menu-item ">
-                <p class="text-uppercase">Classifieds</p>
-                <i class="fas fa-caret-down"><a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></i>
-                <ul class="footer-menu">
+            <li class="menu-item">
+                <div class="row">
+                    <p class="text-uppercase col col-9">Classifieds</p>
+                    <i class="fas fa-caret-down col col-3 d-flex align-self-center justify-content-end" onclick="toggleFooterMenu(this)">
+                        <a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a>
+                    </i>
+                </div>
+                <ul class="footer-menu shrink">
                     <li class="submenu-item"><a href="#">Autos</a></li>
                     <li class="submenu-item"><a href="#">Real Estate</a></li>
                     <li class="submenu-item"><a href="#">Jobs</a></li>
                 </ul>
             </li>
-            <li class="menu-item ">
-                <p class="text-uppercase">Contact Us</p>
-                <i class="fas fa-caret-down"><a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></i>
-                <ul class="footer-menu">
+            <li class="menu-item">
+                <div class="row">
+                    <p class="text-uppercase col col-9">Contact Us</p>
+                    <i class="fas fa-caret-down col col-3 d-flex align-self-center justify-content-end" onclick="toggleFooterMenu(this)">
+                        <a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a>
+                    </i>
+                </div>
+                <ul class="footer-menu shrink">
                     <li class="submenu-item"><a href="#">Careers</a></li>
                     <li class="submenu-item"><a href="#">Denver Post Store</a></li>
                     <li class="submenu-item"><a href="#">Place an Obituary</a></li>
@@ -180,9 +194,13 @@
                 </ul>
             </li>
             <li class="menu-item">
-                <p class="text-uppercase">Today’s Front Page</p>
-                <i class="fas fa-caret-down"><a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a></i>
-                <ul class="footer-menu">
+                <div class="row">
+                    <p class="text-uppercase col col-9">Today’s Front Page</p>
+                    <i class="fas fa-caret-down col col-3 d-flex align-self-center justify-content-end" onclick="toggleFooterMenu(this)">
+                        <a href="#" class="icon-plus" aria-label="Click here to expand the menu"></a>
+                    </i>
+                </div>
+                <ul class="footer-menu shrink">
                     <li class="submenu-item"><a href="#">Back Issues</a></li>
                     <li class="submenu-item"><a href="#">Archives</a></li>
                     <li class="submenu-item"><a href="#">Mobile Apps</a></li>
@@ -191,7 +209,7 @@
             <li class="menu-item">
                 <p class="text-uppercase">Follow Us</p>
                 <div class="footer-follow">
-                    <ul class="footer-menu d-flex p-0">
+                    <ul class="footer-menu social d-flex p-0">
                         <li class="submenu-item d-inline-block rounded-circle icon">
                             <a href="#" class="d-flex justify-content-center align-items-center" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
                         </li>

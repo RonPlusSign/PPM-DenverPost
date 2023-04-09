@@ -27,6 +27,10 @@ header {
     }
   }
 
+  .btn {
+    border: none;
+  }
+
   .nav-primary-top {
     height: 4em;
     margin: 0;
@@ -68,7 +72,6 @@ header {
 
     #sidenavCollapse {
       font-weight: 600;
-      border: none;
 
       i {
         margin-right: 5px;
@@ -83,11 +86,12 @@ header {
   }
 
   .nav-primary-middle {
+    height: 5em;
+    width: 100%;
+
     @media only screen and (max-width: 1039px) {
       display: none !important;
     }
-
-    height: 5em;
 
     &.hidden {
       opacity: 0;
@@ -212,17 +216,40 @@ footer {
       margin: 1em 2.5% 0 2.5%;
       padding-top: 1em;
 
+      @media only screen and (max-width: 638px) {
+        padding-bottom: 0.3em;
+      }
+
       p { // Section title
         font-weight: 700;
         margin: 0;
 
-        &:hover { // TODO: Deve essere un link
+        &:hover {
           text-decoration: underline;
+        }
+      }
+
+      i.fas.fa-caret-down {
+        color: #9d9a98;
+        padding-right: 1.5em;
+        @media screen and (min-width: 639px) {
+          display: none !important;
         }
       }
 
       ul.footer-menu {
         padding: 0;
+        max-height: 1000px;
+        overflow: hidden;
+
+        &:not(.social) {
+          transition: max-height 0.5s ease-in-out, overflow 0.5s ease-in-out;
+          @media screen and (max-width: 638px) {
+            &.shrink {
+              max-height: 0;
+            }
+          }
+        }
 
         li.submenu-item {
           margin: 0.7em 0;
@@ -230,7 +257,7 @@ footer {
           &.icon {
             height: 2em;
             width: 2em;
-            background-color: #7d161e;
+            background-color: #8e1024;
             margin-right: 0.5em;
             font-size: 1.25em;
 
@@ -253,6 +280,7 @@ footer {
       }
 
       .subscribe-button {
+        background-color: #8e1024;
         @media only screen and (max-width: 638px) {
           padding: 5%;
           height: auto;

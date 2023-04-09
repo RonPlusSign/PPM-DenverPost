@@ -26,3 +26,10 @@ function onSidenavCollapseClick(sidenavCollapseBtn) {
     sidenavCollapseBtn.children[0].classList.toggle('fa-times');
     // TODO: Show left sidenav
 }
+
+function toggleFooterMenu(element) {
+    document.querySelectorAll('.menu-item').forEach((menu) => {
+        if (Array.from(menu.children[0].children).includes(element))
+            menu.children[1].classList.toggle('shrink');
+    });
+}
