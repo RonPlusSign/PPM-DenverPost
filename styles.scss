@@ -164,6 +164,21 @@ main {
     font-size: 20px;
   }
 
+  .with-space-for-ads {
+    @media only screen and (max-width: 799px) {
+      width: 100%; // No space for ads on mobile
+    }
+    @media only screen and (min-width: 800px) {
+      width: 60%;
+    }
+    @media only screen and (min-width: 1040px) {
+      width: 69%;
+    }
+    @media only screen and (min-width: 1280px) {
+      width: 75%;
+    }
+  }
+
   .counter-list {
 
     h3.title {
