@@ -25,6 +25,7 @@ button.btn.action {
 
 header {
   img.logo {
+    max-width: 400px;
     @media only screen and (min-width: 1040px) {
       &.hidden {
         display: none;
@@ -151,7 +152,6 @@ header {
       color: #8e1024;
     }
   }
-
 }
 
 main {
