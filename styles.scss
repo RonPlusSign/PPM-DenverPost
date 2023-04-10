@@ -10,6 +10,11 @@
   src: url('fonts/DroidSerif.woff') format('woff');
 }
 
+@font-face {
+  font-family: SourceSansPro;
+  src: url('fonts/SourceSansPro.ttf') format('truetype');
+}
+
 *:not(i) { // Default font (except for icons)
   font-family: DroidSans, Helvetica, sans-serif !important;
 }
@@ -164,6 +169,21 @@ main {
     font-size: 20px;
   }
 
+  div.subscriber-only:before {
+    content: "Subscriber Only";
+    font-family: SourceSansPro, Helvetica, sans-serif;
+    color: white;
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #7d161e;
+    display: block;
+    width: fit-content;
+    margin: auto auto 3px 0;
+    padding: 0 5px 2px 5px;
+  }
+
   .with-space-for-ads {
     @media only screen and (max-width: 799px) {
       width: 100%; // No space for ads on mobile
@@ -180,7 +200,6 @@ main {
   }
 
   .counter-list {
-
     h3.title {
       color: #8e1024;
     }
@@ -224,6 +243,84 @@ main {
 
           &:hover {
             color: #c81632;
+          }
+        }
+      }
+    }
+  }
+
+  .headline {
+    margin-left: 0;
+
+    @media only screen and (max-width: 1039px) {
+      width: 100%;
+    }
+
+    @media only screen and (min-width: 1040px) {
+      width: 69%;
+    }
+    @media only screen and (min-width: 1280px) {
+      width: 75%;
+    }
+
+    .main-news {
+      @media only screen and (max-width: 799px) {
+        max-width: 100%;
+      }
+      @media only screen and (min-width: 800px) {
+        max-width: 60%;
+      }
+      @media only screen and (min-width: 1040px) {
+        max-width: 69%;
+      }
+      @media only screen and (min-width: 1280px) {
+        max-width: 75%;
+      }
+    }
+
+    .latest-headlines {
+      @media only screen and (max-width: 799px) {
+        max-width: 100%;
+      }
+      @media only screen and (min-width: 800px) {
+        max-width: 40%;
+      }
+      @media only screen and (min-width: 1040px) {
+        max-width: 31%;
+      }
+      @media only screen and (min-width: 1280px) {
+        max-width: 25%;
+      }
+
+      ul {
+        list-style: none;
+
+        li {
+          border-top: 1px solid #d7d6d2;
+          margin-top: 0.75em;
+          padding-top: 1em;
+
+          &:hover {
+            a {
+              color: #8e1024 !important;
+            }
+          }
+
+          span.title {
+            font-size: 15px;
+            font-weight: bold;
+            font-family: DroidSerif, Helvetica, sans-serif !important;
+          }
+
+          span.timestamp {
+            font-size: 13px;
+            color: #5d5b5a;
+          }
+
+          &:first-child {
+            border-top: none;
+            margin-top: 0;
+            padding-top: 0;
           }
         }
       }
