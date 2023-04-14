@@ -1,6 +1,7 @@
 // sass --watch styles.scss styles.css
 
 :root {
+  // Colors
   --main-color: #8e1024;
   --main-color-accent: #c81632;
   --background-color: #7d161e;
@@ -8,6 +9,12 @@
   --gray-color-dark: #5d5b5a;
   --gray-color-light: #d7d6d2;
 }
+
+// Breakpoints (same as Bootstrap)
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
 
 @font-face {
   font-family: DroidSans;
@@ -44,7 +51,7 @@ button.btn.action {
 header {
   img.logo {
     max-width: 400px;
-    @media only screen and (min-width: 1040px) {
+    @media only screen and (min-width: $lg) {
       &.hidden {
         display: none;
       }
@@ -61,7 +68,7 @@ header {
     padding: 0 2.5%;
     min-width: 100%;
 
-    @media only screen and (max-width: 1039px) {
+    @media only screen and (max-width: calc($lg - 1px)) {
       border-bottom: 1px solid var(--gray-color);
     }
 
@@ -78,13 +85,13 @@ header {
         text-decoration: underline;
       }
 
-      @media only screen and (max-width: 1039px) {
+      @media only screen and (max-width: calc($lg - 1px)) {
         display: none !important;
       }
     }
 
     .user-menu {
-      @media only screen and (min-width: 1040px) {
+      @media only screen and (min-width: $lg) {
         display: none !important;
       }
 
@@ -102,7 +109,7 @@ header {
       }
 
       span {
-        @media only screen and (max-width: 1039px) {
+        @media only screen and (max-width: calc($lg - 1px)) {
           display: none !important;
         }
       }
@@ -113,7 +120,7 @@ header {
     height: 5em;
     width: 100%;
 
-    @media only screen and (max-width: 1039px) {
+    @media only screen and (max-width: calc($lg - 1px)) {
       display: none !important;
     }
 
@@ -124,7 +131,7 @@ header {
 
 
   .nav-primary-bottom {
-    @media only screen and (max-width: 1039px) {
+    @media only screen and (max-width: calc($lg - 1px)) {
       display: none !important;
     }
 
@@ -162,7 +169,7 @@ header {
       width: 16px;
     }
 
-    @media only screen and (max-width: 1039px) { // Hide if not in wide screen
+    @media only screen and (max-width: calc($lg - 1px)) { // Hide if not in wide screen
       display: none !important;
     }
 
@@ -211,16 +218,16 @@ main {
   }
 
   .with-space-for-ads {
-    @media only screen and (max-width: 799px) {
+    @media only screen and (max-width: calc($md - 1px)) {
       width: 100%; // No space for ads on mobile
     }
-    @media only screen and (min-width: 800px) {
+    @media only screen and (min-width: $md) {
       width: 60%;
     }
-    @media only screen and (min-width: 1040px) {
+    @media only screen and (min-width: $lg) {
       width: 69%;
     }
-    @media only screen and (min-width: 1280px) {
+    @media only screen and (min-width: $xl) {
       width: 75%;
     }
   }
@@ -233,7 +240,7 @@ main {
     ul.counter {
       columns: 2;
 
-      @media only screen and (max-width: 639px) {
+      @media only screen and (max-width: $sm) {
         columns: 1;
       }
 
@@ -276,28 +283,28 @@ main {
   .headline {
     margin-left: 0;
 
-    @media only screen and (max-width: 1039px) {
+    @media only screen and (max-width: calc($lg - 1px)) {
       width: 100%;
     }
 
-    @media only screen and (min-width: 1040px) {
+    @media only screen and (min-width: $lg) {
       width: 69%;
     }
-    @media only screen and (min-width: 1280px) {
+    @media only screen and (min-width: $xl) {
       width: 75%;
     }
 
     .main-news {
-      @media only screen and (max-width: 799px) {
+      @media only screen and (max-width: calc($md - 1px)) {
         max-width: 100%;
       }
-      @media only screen and (min-width: 800px) {
+      @media only screen and (min-width: $md) {
         max-width: 60%;
       }
-      @media only screen and (min-width: 1040px) {
+      @media only screen and (min-width: $lg) {
         max-width: 69%;
       }
-      @media only screen and (min-width: 1280px) {
+      @media only screen and (min-width: $xl) {
         max-width: 75%;
       }
 
@@ -320,7 +327,7 @@ main {
           box-sizing: border-box;
           position: relative;
 
-          @media screen and (max-width: 991px) {
+          @media screen and (max-width: calc($lg - 1px)) {
             &:after {
               content: "";
               background: var(--gray-color);
@@ -337,16 +344,16 @@ main {
     }
 
     .latest-headlines {
-      @media only screen and (max-width: 799px) {
+      @media only screen and (max-width: calc($md - 1px)) {
         max-width: 100%;
       }
-      @media only screen and (min-width: 800px) {
+      @media only screen and (min-width: $md) {
         max-width: 40%;
       }
-      @media only screen and (min-width: 1040px) {
+      @media only screen and (min-width: $lg) {
         max-width: 31%;
       }
-      @media only screen and (min-width: 1280px) {
+      @media only screen and (min-width: $xl) {
         max-width: 25%;
       }
 
@@ -470,22 +477,22 @@ footer {
     margin: 0 2.5%;
 
     // Footer logo image width based on screen size
-    @media only screen and (max-width: 638px) {
+    @media only screen and (max-width: calc($sm - 1px)) {
       width: 95%;
       max-width: 400px;
       display: block;
       margin: auto;
     }
 
-    @media only screen and (min-width: 639px) and (max-width: 799px) {
+    @media only screen and (min-width: $sm) and (max-width: calc($md - 1px)) {
       width: 40%;
     }
 
-    @media only screen and (min-width: 800px) and (max-width: 1039px) {
+    @media only screen and (min-width: $md) and (max-width: calc($lg - 1px)) {
       width: 28%;
     }
 
-    @media only screen and (min-width: 1040px) {
+    @media only screen and (min-width: $lg) {
       width: 20%;
     }
   }
@@ -503,27 +510,27 @@ footer {
     padding-left: 0;
 
     // Footer column width based on screen size
-    @media only screen and (max-width: 638px) {
+    @media only screen and (max-width: calc($sm - 1px)) {
       .menu-item {
         width: 95%;
       }
     }
 
-    @media only screen and (min-width: 639px) and (max-width: 799px) {
+    @media only screen and (min-width: $sm) and (max-width: calc($md - 1px)) {
       max-height: 57.25em;
       .menu-item {
         width: 40%;
       }
     }
 
-    @media only screen and (min-width: 800px) and (max-width: 1039px) {
+    @media only screen and (min-width: $md) and (max-width: calc($lg - 1px)) {
       max-height: 37.5em;
       .menu-item {
         width: 28%;
       }
     }
 
-    @media only screen and (min-width: 1040px) {
+    @media only screen and (min-width: $lg) {
       max-height: 25.5em;
       .menu-item {
         width: 20%;
@@ -537,7 +544,7 @@ footer {
       margin: 1em 2.5% 0 2.5%;
       padding-top: 1em;
 
-      @media only screen and (max-width: 638px) {
+      @media only screen and (max-width: calc($sm - 1px)) {
         padding-bottom: 0.3em;
       }
 
@@ -553,7 +560,7 @@ footer {
       i.fas.fa-caret-down {
         color: var(--gray-color);
         padding-right: 1.5em;
-        @media screen and (min-width: 639px) {
+        @media screen and (min-width: $sm) {
           display: none !important;
         }
       }
@@ -565,7 +572,7 @@ footer {
 
         &:not(.social) {
           transition: max-height 0.5s ease-in-out, overflow 0.5s ease-in-out;
-          @media screen and (max-width: 638px) {
+          @media screen and (max-width: calc($sm - 1px)) {
             &.shrink {
               max-height: 0;
             }
@@ -600,14 +607,14 @@ footer {
       }
 
       .footer-follow .footer-menu {
-        @media only screen and (max-width: 638px) {
+        @media only screen and (max-width: calc($sm - 1px)) {
           justify-content: flex-end;
         }
       }
 
       .subscribe-button {
         background-color: var(--main-color);
-        @media only screen and (max-width: 638px) {
+        @media only screen and (max-width: calc($sm - 1px)) {
           padding: 5%;
           height: auto;
         }
@@ -634,7 +641,7 @@ footer {
       margin-right: 1em;
       color: var(--gray-color-dark);
 
-      @media only screen and (max-width: 799px) {
+      @media only screen and (max-width: calc($md - 1px)) {
         width: 100%;
         margin: 0;
         font-size: 16px;
