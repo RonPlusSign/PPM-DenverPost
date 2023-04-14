@@ -1,5 +1,14 @@
 // sass --watch styles.scss styles.css
 
+:root {
+  --main-color: #8e1024;
+  --main-color-accent: #c81632;
+  --background-color: #7d161e;
+  --gray-color: #9d9a98;
+  --gray-color-dark: #5d5b5a;
+  --gray-color-light: #d7d6d2;
+}
+
 @font-face {
   font-family: DroidSans;
   src: url('fonts/DroidSans.woff') format('woff');
@@ -17,10 +26,14 @@
 
 *:not(i) { // Default font (except for icons)
   font-family: DroidSans, Helvetica, sans-serif !important;
+
+  &.serif {
+    font-family: DroidSerif, Helvetica, sans-serif !important;
+  }
 }
 
 button.btn.action {
-  background-color: #7d161e;
+  background-color: var(--background-color);
   color: white;
   width: 120px;
   height: 45px;
@@ -49,7 +62,7 @@ header {
     min-width: 100%;
 
     @media only screen and (max-width: 1039px) {
-      border-bottom: 1px solid #9d9a98;
+      border-bottom: 1px solid var(--gray-color);
     }
 
     &.fixed-top {
@@ -61,7 +74,7 @@ header {
 
     .btn.action {
       &:hover {
-        background-color: #c81632;
+        background-color: var(--main-color-accent);
         text-decoration: underline;
       }
 
@@ -76,7 +89,7 @@ header {
       }
 
       i.chevron {
-        color: #5d5b5a;
+        color: var(--gray-color-dark);
         font-size: 10px;
       }
     }
@@ -128,7 +141,7 @@ header {
       padding: 0 0.9em;
 
       &:hover {
-        color: #c81632;
+        color: var(--main-color-accent);
         text-decoration: underline;
       }
     }
@@ -141,7 +154,7 @@ header {
     padding: 1em 0.65em;
 
     p {
-      color: #8e1024;
+      color: var(--main-color);
       font-weight: 600;
     }
 
@@ -154,7 +167,7 @@ header {
     }
 
     a:hover {
-      color: #8e1024;
+      color: var(--main-color);
     }
   }
 }
@@ -164,12 +177,25 @@ main {
   padding: 1em 0.65em;
   max-width: 80em;
 
+  .d-contents {
+    display: contents !important;
+  }
+
   h3.title {
-    border-bottom: 2px solid #8e1024;
+    border-bottom: 2px solid var(--main-color);
     font-size: 20px;
   }
 
-  div.subscriber-only:before {
+  a {
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      color: var(--main-color);
+    }
+  }
+
+  .subscriber-only:before {
     content: "Subscriber Only";
     font-family: SourceSansPro, Helvetica, sans-serif;
     color: white;
@@ -177,7 +203,7 @@ main {
     line-height: 22px;
     font-weight: bold;
     text-transform: uppercase;
-    background-color: #7d161e;
+    background-color: var(--background-color);
     display: block;
     width: fit-content;
     margin: auto auto 3px 0;
@@ -201,7 +227,7 @@ main {
 
   .counter-list {
     h3.title {
-      color: #8e1024;
+      color: var(--main-color);
     }
 
     ul.counter {
@@ -222,7 +248,7 @@ main {
         &:before {
           // Insert counter before each list item
           content: counter(item);
-          background-color: #8e1024;
+          background-color: var(--main-color);
           color: white;
           font-weight: bolder;
           min-width: 32px !important;
@@ -237,12 +263,10 @@ main {
         }
 
         a {
-          @media only screen and (max-width: 1039px) {
-            font-family: DroidSerif, Helvetica, sans-serif !important;
-          }
+          font-family: DroidSerif, Helvetica, sans-serif !important;
 
           &:hover {
-            color: #c81632;
+            color: var(--main-color-accent);
           }
         }
       }
@@ -276,6 +300,40 @@ main {
       @media only screen and (min-width: 1280px) {
         max-width: 75%;
       }
+
+      article.main-article {
+        h2 {
+          font-family: DroidSerif, Helvetica, sans-serif !important;
+        }
+
+        span {
+          font-size: 15px;
+        }
+      }
+
+      .news-title {
+        font-size: 20px;
+      }
+
+      .other-articles {
+        article {
+          box-sizing: border-box;
+          position: relative;
+
+          @media screen and (max-width: 991px) {
+            &:after {
+              content: "";
+              background: var(--gray-color);
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              height: 1px;
+              width: 95%;
+              margin: 0 2.5%;
+            }
+          }
+        }
+      }
     }
 
     .latest-headlines {
@@ -297,7 +355,7 @@ main {
 
         li {
           &:not(:last-child) {
-            border-top: 1px solid #d7d6d2;
+            border-top: 1px solid var(--gray-color-light);
           }
 
           margin-top: 0.75em;
@@ -305,7 +363,7 @@ main {
 
           &:hover {
             a {
-              color: #8e1024 !important;
+              color: var(--main-color);
             }
           }
 
@@ -317,7 +375,7 @@ main {
 
           span.timestamp {
             font-size: 13px;
-            color: #5d5b5a;
+            color: var(--gray-color-dark);
           }
 
           &:first-child {
@@ -340,7 +398,7 @@ main {
               }
 
               .btn {
-                background-color: #8e1024;
+                background-color: var(--main-color);
                 color: white;
                 font-weight: bold;
                 font-size: 15px;
@@ -350,21 +408,21 @@ main {
                 transition: background-color 0.15s ease-in-out;
 
                 &:hover {
-                  background-color: #c81632 !important;
+                  background-color: var(--main-color-accent) !important;
                 }
               }
 
               li.icon {
                 height: 2em;
                 width: 2em;
-                background-color: #8e1024;
+                background-color: var(--main-color);
                 margin: 0 0.15em 0 0.15em;
                 padding: 0;
                 font-size: 1.25em;
                 transition: background-color 0.15s ease-in-out;
 
                 &:hover {
-                  background-color: #c81632 !important;
+                  background-color: var(--main-color-accent) !important;
                 }
 
                 a {
@@ -473,7 +531,7 @@ footer {
     }
 
     .menu-item {
-      border-top: 2px solid #000;
+      border-top: 2px solid black;
       display: flex;
       flex-direction: column;
       margin: 1em 2.5% 0 2.5%;
@@ -493,7 +551,7 @@ footer {
       }
 
       i.fas.fa-caret-down {
-        color: #9d9a98;
+        color: var(--gray-color);
         padding-right: 1.5em;
         @media screen and (min-width: 639px) {
           display: none !important;
@@ -521,12 +579,12 @@ footer {
           &.icon {
             height: 2em;
             width: 2em;
-            background-color: #8e1024;
+            background-color: var(--main-color);
             margin-right: 0.5em;
             font-size: 1.25em;
 
             &:hover {
-              background-color: #c81632 !important;
+              background-color: var(--main-color-accent) !important;
             }
 
             a {
@@ -548,14 +606,14 @@ footer {
       }
 
       .subscribe-button {
-        background-color: #8e1024;
+        background-color: var(--main-color);
         @media only screen and (max-width: 638px) {
           padding: 5%;
           height: auto;
         }
 
         &:hover {
-          background-color: #c81632;
+          background-color: var(--main-color-accent);
           text-decoration: underline;
         }
       }
@@ -574,7 +632,7 @@ footer {
       display: inline-block;
       line-height: 1.5;
       margin-right: 1em;
-      color: #5d5b5a;
+      color: var(--gray-color-dark);
 
       @media only screen and (max-width: 799px) {
         width: 100%;
@@ -583,7 +641,7 @@ footer {
       }
 
       a {
-        color: #5d5b5a;
+        color: var(--gray-color-dark);
         text-decoration: none;
       }
     }
