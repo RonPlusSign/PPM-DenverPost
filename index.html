@@ -307,12 +307,106 @@
     </div>
 
     <!-- Events -->
-    <div class="events">
-        <h1>EVENTS</h1>
+    <div class="events container d-contents">
+        <div class="first-row d-flex align-items-center">
+            <!-- Search events -->
+            <div class="search-event p-0 my-2 flex-grow-1">
+                <i class="fas fa-search"></i>
+                <label for="searchEvent" hidden>Search for events by name, keyword, location, venue...</label>
+                <input type="text" class="flex w-100 form-control rounded-3" id="searchEvent" placeholder="Search for events by name, keyword, location, venue...">
+            </div>
+            <!-- New event -->
+            <div class="create-event flex-shrink-1 p-0 ms-sm-2">
+                <button class="btn w-100 text-uppercase fw-bold rounded-1">Create an event</button>
+            </div>
+        </div>
+        <div class="cards row w-100 m-0">
+            <!-- Event cards -->
+            <div class="col p-0 card me-sm-1">
+                <img src="images/placeholder.png" class="card-img-top" alt="Event Lorem Ipsum">
+                <div class="card-body p-0">
+                    <h5 class="card-title fw-bolder mx-2 mt-2">Lorem ipsum dolor sit amet</h5>
+                    <div class="card-text w-100 p-2 d-inline-flex">
+                        <span class="d-flex w-100 align-items-center"><i class="fas fa-location-dot mx-1"></i>Los Angeles</span>
+                        <span class="d-flex align-items-center"><i class="fas fa-clock mx-1"></i>10:00AM</span>
+                    </div>
+                </div>
+                <div class="date rounded-end-2 text-uppercase d-flex align-items-center justify-content-center">
+                    <div class="my-auto text-center">Apr<br><span>16</span></div>
+                </div>
+                <div class="category rounded-5 px-2 py-1">Dance</div>
+            </div>
+
+            <div class="col p-0 card ms-1 mx-md-1 d-none d-sm-inline-block">
+                <img src="images/placeholder.png" class="card-img-top" alt="Event Lorem Ipsum">
+                <div class="card-body p-0">
+                    <h5 class="card-title fw-bolder mx-2 mt-2">Lorem ipsum dolor sit amet</h5>
+                    <div class="card-text w-100 p-2 d-inline-flex">
+                        <span class="d-flex w-100 align-items-center"><i class="fas fa-location-dot mx-1"></i>Los Angeles</span>
+                        <span class="d-flex align-items-center"><i class="fas fa-clock mx-1"></i>9:00PM</span>
+                    </div>
+                </div>
+                <div class="date rounded-end-2 text-uppercase d-flex align-items-center justify-content-center">
+                    <div class="my-auto text-center">Today</div>
+                </div>
+                <div class="category rounded-5 px-2 py-1">Music</div>
+            </div>
+
+            <div class="col p-0 card ms-1 mx-lg-1 d-none d-md-inline-block">
+                <img src="images/placeholder.png" class="card-img-top" alt="Event Lorem Ipsum">
+                <div class="card-body p-0">
+                    <h5 class="card-title fw-bolder mx-2 mt-2">Lorem ipsum dolor sit amet</h5>
+                    <div class="card-text w-100 p-2 d-inline-flex">
+                        <span class="d-flex w-100 align-items-center"><i class="fas fa-location-dot mx-1"></i>Los Angeles</span>
+                        <span class="d-flex align-items-center"><i class="fas fa-clock mx-1"></i>11:30AM</span>
+                    </div>
+                </div>
+                <div class="date rounded-end-2 text-uppercase d-flex align-items-center justify-content-center">
+                    <div class="my-auto text-center">Feb<br><span>28</span></div>
+                </div>
+                <div class="category rounded-5 px-2 py-1">Concert</div>
+            </div>
+
+            <div class="col p-0 card ms-1 mx-lg-1 d-none d-lg-inline-block">
+                <img src="images/placeholder.png" class="card-img-top" alt="Event Lorem Ipsum">
+                <div class="card-body p-0">
+                    <h5 class="card-title fw-bolder mx-2 mt-2">Lorem ipsum dolor sit amet</h5>
+                    <div class="card-text w-100 p-2 d-inline-flex">
+                        <span class="d-flex w-100 align-items-center"><i class="fas fa-location-dot mx-1"></i>Los Angeles</span>
+                        <span class="d-flex align-items-center"><i class="fas fa-clock mx-1"></i>8:45AM</span>
+                    </div>
+                </div>
+                <div class="date rounded-end-2 text-uppercase d-flex align-items-center justify-content-center">
+                    <div class="my-auto text-center">Nov<br><span>30</span></div>
+                </div>
+                <div class="category rounded-5 px-2 py-1">Festival</div>
+            </div>
+
+            <div class="col p-0 card ms-1 d-none d-lg-inline-block">
+                <img src="images/placeholder.png" class="card-img-top" alt="Event Lorem Ipsum">
+                <div class="card-body p-0">
+                    <h5 class="card-title fw-bolder mx-2 mt-2">Lorem ipsum dolor sit amet</h5>
+                    <div class="card-text w-100 p-2 d-inline-flex">
+                        <span class="d-flex w-100 align-items-center"><i class="fas fa-location-dot mx-1"></i>Los Angeles</span>
+                        <span class="d-flex align-items-center"><i class="fas fa-clock mx-1"></i>11:00PM</span>
+                    </div>
+                </div>
+                <div class="date rounded-end-2 text-uppercase d-flex align-items-center justify-content-center">
+                    <div class="my-auto text-center">Dec<br><span>3</span></div>
+                </div>
+                <div class="category rounded-5 px-2 py-1">Cinema</div>
+            </div>
+
+        </div>
+        <div class="row my-2 more-events">
+            <div class="col-12 col-md-6 d-none d-sm-inline-block">
+                <button class="btn w-100 text-uppercase fw-bold rounded-1">More events</button>
+            </div>
+        </div>
     </div>
 
     <!-- Trending nationally -->
-    <div class="counter-list">
+    <div class="counter-list mt-5">
         <h3 class="title text-uppercase">Trending nationally</h3>
         <ul class="counter d-block p-0">
             <li class="align-items-center"><a href="#" class="link-dark link-underline-opacity-0 fw-bolder">Lorem ipsum dolor sit amet incidunt ea ullam hic labore veniam et omnis et culpa</a></li>

@@ -8,6 +8,9 @@
   --gray-color: #9d9a98;
   --gray-color-dark: #5d5b5a;
   --gray-color-light: #d7d6d2;
+
+  --secondary-color: #004d73;
+  --secondary-color-dark: #111827;
 }
 
 // Breakpoints (same as Bootstrap)
@@ -318,14 +321,15 @@ main {
         }
       }
 
-      .news-title {
-        font-size: 20px;
-      }
 
       .other-articles {
         article {
           box-sizing: border-box;
           position: relative;
+
+          .news-title {
+            font-size: 20px;
+          }
 
           @media screen and (max-width: calc($lg - 1px)) {
             &:after {
@@ -444,6 +448,97 @@ main {
               }
             }
           }
+        }
+      }
+    }
+  }
+
+  .events {
+    button {
+      background-color: var(--secondary-color);
+      font-size: 14px;
+      line-height: 20px;
+      padding: 10px 40px;
+      color: white;
+    }
+
+    .first-row {
+      @media screen and (max-width: $sm) {
+        flex-wrap: wrap-reverse;
+      }
+
+      .search-event {
+        position: relative;
+        display: inline-block;
+
+        @media screen and (max-width: $sm) {
+          width: 100%;
+          display: block;
+        }
+
+        input {
+          padding: 10px 0 10px 40px;
+          font-size: 14px;
+          line-height: 20px;
+          color: var(--gray-color);
+        }
+
+        i {
+          position: absolute;
+          color: var(--gray-color-dark);
+          left: 15px;
+          top: 12px;
+        }
+      }
+
+      .create-event {
+        width: 100%;
+        display: block;
+
+        @media screen and (min-width: $sm) {
+          display: inline-block;
+          width: 256px;
+        }
+      }
+    }
+
+    .cards {
+      .card {
+        .card-title {
+          font-size: 16px;
+        }
+
+        .card-text {
+          font-size: 12px;
+          color: var(--gray-color-dark);
+        }
+
+        .date {
+          position: absolute;
+          top: 10px;
+          left: 0;
+          width: 48px;
+          height: 48px;
+
+          font-size: 12px;
+          line-height: 1.1;
+          color: white;
+          background-color: var(--secondary-color-dark);
+
+          span { // Number
+            font-size: 24px;
+            font-weight: bolder;
+          }
+        }
+
+        .category {
+          position: absolute;
+          top: 20px;
+          right: 10px;
+          font-size: 12px;
+          color: var(--secondary-color);
+          background-color: white;
+          border: 1px solid var(--secondary-color);
         }
       }
     }
