@@ -194,6 +194,11 @@ main {
   h3.title {
     border-bottom: 2px solid var(--main-color);
     font-size: 20px;
+
+    i {
+      font-size: 16px;
+      color: var(--main-color);
+    }
   }
 
   a {
@@ -203,6 +208,10 @@ main {
     &:hover {
       color: var(--main-color);
     }
+  }
+
+  ul {
+    list-style: none;
   }
 
   .subscriber-only:before {
@@ -221,6 +230,7 @@ main {
   }
 
   .with-space-for-ads {
+
     @media only screen and (max-width: calc($md - 1px)) {
       width: 100%; // No space for ads on mobile
     }
@@ -448,6 +458,36 @@ main {
               }
             }
           }
+        }
+      }
+    }
+  }
+
+  .section {
+    margin-left: 0;
+
+    .first-article {
+      h3.title {
+        font-size: 26px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+    }
+
+    ul.other-articles {
+      @media screen and (max-width: $lg) {
+        border-top: 1px solid var(--gray-color-light);
+        border-bottom: 1px solid var(--gray-color-light);
+        padding-top: 1em !important;
+      }
+
+      li {
+        font-size: 15px;
+        @media screen and (max-width: $lg) {
+          margin-left: 0 !important;
+          margin-right: 0 !important;
         }
       }
     }
