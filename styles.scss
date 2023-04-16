@@ -208,7 +208,7 @@ header {
     height: calc(100% - 64px);
     border-top: 1px solid black;
     width: 300px;
-    overflow: hidden;
+    overflow: scroll;
     transition: width 0.3s ease-in-out;
 
     .btn.action {
