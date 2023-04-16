@@ -494,6 +494,42 @@ main {
     }
   }
 
+  .four-columns {
+
+    & > div {
+      @media only screen and (max-width: calc($sm - 1px)) {
+        width: 100%;
+        margin-bottom: 1.5em;
+      }
+
+      @media only screen and (min-width: $sm) and (max-width: calc($lg - 1px)) {
+        width: calc(50% - 1em);
+        margin-bottom: 1em;
+      }
+
+      @media only screen and (min-width: $lg) {
+        width: calc(25% - 1em);
+      }
+
+      article.first-article {
+        h5 {
+          font-size: 19px;
+        }
+
+        span {
+          font-size: 15px;
+          line-height: 1.3;
+        }
+      }
+
+      ul {
+        li:not(:last-child) {
+          border-bottom: 1px solid var(--gray-color-light);
+        }
+      }
+    }
+  }
+
   .events {
     button {
       background-color: var(--secondary-color);
