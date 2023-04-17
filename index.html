@@ -78,11 +78,25 @@
     <!-- Left sidenav -->
     <div id="sidenav-left" class="border-end">
         <div class="mx-2 sidenav-left-content mb-5">
-            <div class="row m-4">
+            <div class="row mx-4 my-2 mt-4">
                 <button class="btn action rounded-1 w-100">Subscribe Now</button>
             </div>
 
-            <ul class="row p-0 m-0">
+            <!-- Weather widget -->
+            <div class="weather-widget row p-0 m-0 d-flex align-items-center">
+                <div class="row p-0 m-0 d-flex d-md-none w-100">
+                    <div class="col-3 fw-bold p-0 d-flex justify-content-end">
+                        18°C
+                        <i class="fas fa-cloud-showers-heavy align-self-center mx-1"></i>
+                    </div>
+                    <div class="col-9 p-0 ps-2">
+                        <p id="weather-date-sidenav" class="row fw-bold m-0"></p>
+                        <span class="row m-0 mt-1"><a href="#" class="p-0 m-0 link-underline-opacity-0 link-dark">Digital Replica Edition</a></span>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="row p-0 mx-0 my-2">
                 <li class="p-0">
                     <a href="#"><i class="fas fa-home me-2"></i>Home page</a>
                 </li>
@@ -111,9 +125,21 @@
 
 
     <div class="nav-primary-middle d-flex justify-content-center row p-0 m-0">
-        <div class="col col-4">
-            <!-- TODO: Insert weather widget -->
+
+        <!-- Weather widget -->
+        <div class="weather-widget col col-4 d-flex align-items-center">
+            <div class="row m-0 d-none d-md-flex w-100">
+                <div class="col-3 fw-bold p-0 d-flex justify-content-end">
+                    18°C
+                    <i class="fas fa-cloud-showers-heavy align-self-center mx-1"></i>
+                </div>
+                <div class="col-9 p-0 ps-2">
+                    <p id="weather-date" class="row fw-bold m-0"></p>
+                    <span class="row m-0 mt-1"><a href="#" class="p-0 m-0 link-underline-opacity-0 link-dark">Digital Replica Edition</a></span>
+                </div>
+            </div>
         </div>
+
         <div class="col d-flex col-4">
             <img id="logo" src="images/dp-logo.svg" alt="Denver Post Logo" class="w-100 logo m-auto"/>
         </div>

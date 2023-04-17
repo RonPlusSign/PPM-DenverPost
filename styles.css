@@ -51,6 +51,16 @@ button.btn.action {
   font-size: 0.95em;
 }
 
+.weather-widget i {
+  font-size: 20px;
+}
+.weather-widget p {
+  font-size: 15px;
+}
+.weather-widget span {
+  font-size: 12px;
+}
+
 header img.logo {
   max-width: 400px;
 }

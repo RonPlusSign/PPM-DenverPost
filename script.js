@@ -1,5 +1,11 @@
 const scrollThreshold = 64; // 64px, like the height of the sticky navbar
 
+window.onload = function () {
+    dateForWeatherWidget();	// Calculate current date for weather widget
+
+    // TODO: Cookie with disclaimer
+}
+
 // Sticky navbar on scroll
 window.onscroll = function () {
     // If page is scrolled, show navbar as fixed and add logo to it
@@ -44,4 +50,32 @@ function toggleFooterMenu(element) {
         if (Array.from(menu.children[0].children).includes(element))
             menu.children[1].classList.toggle('shrink');
     });
+}
+
+function dateForWeatherWidget() {
+    // Get current date with format "Day, Month Nth YYYY"
+    const date = new Date();
+    const day = date.toLocaleString('en-us', {weekday: 'long'});
+    const month = date.toLocaleString('en-us', {month: 'long'});
+    const dayNumber = date.getDate();
+    const year = date.getFullYear();
+
+    // Get cardinal suffix for the day number (e.g. 1st, 2nd, 3rd, 4th, ...)
+    const cardinalSuffix = (dayNumber) => {
+        if (dayNumber > 3 && dayNumber < 21) return 'th';
+        switch (dayNumber % 10) {
+            case 1:
+                return "st";
+            case 2:
+                return "nd";
+            case 3:
+                return "rd";
+            default:
+                return "th";
+        }
+    }
+
+    // Set date in weather widget
+    document.querySelector('#weather-date').innerHTML = `${day}, ${month} ${dayNumber}${cardinalSuffix(dayNumber)} ${year}`;
+    document.querySelector('#weather-date-sidenav').innerHTML = `${day}, ${month} ${dayNumber}${cardinalSuffix(dayNumber)} ${year}`;
 }
