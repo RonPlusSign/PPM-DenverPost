@@ -403,6 +403,48 @@ main {
     padding: 0 5px 2px 5px;
   }
 
+  #disclaimer {
+    background-color: white;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    align-items: center;
+    justify-items: center;
+
+    &:not(.visible) {
+      display: none !important;
+    }
+
+    h2 {
+      color: var(--main-color);
+    }
+
+    .content {
+      width: 80%;
+
+      @media screen and (min-width: $md) {
+        width: 50%;
+      }
+    }
+
+    a {
+      color: var(--main-color);
+
+      &:hover {
+        color: var(--main-color-accent);
+      }
+    }
+
+    .btn {
+      background-color: var(--main-color);
+      color: white;
+      font-size: 18px;
+    }
+  }
+
   .with-space-for-ads {
 
     @media only screen and (max-width: calc($md - 1px)) {

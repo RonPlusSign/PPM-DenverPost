@@ -3,7 +3,20 @@ window.onscroll = stickyNavbarOnScroll;	// Sticky navbar on scroll
 window.onload = function () {
     dateForWeatherWidget();	// Calculate current date for weather widget
 
-    // TODO: Cookie with disclaimer
+    // Open disclaimer if not accepted (local storage value is set to true)
+    if (localStorage.getItem('disclaimerAccepted') !== 'true') {
+        document.querySelector('#disclaimer').classList.add('visible');
+        document.querySelector('body').classList.add('overlay');
+    }
+}
+
+function acceptDisclaimer() {
+    // Set disclaimer accepted in local storage
+    localStorage.setItem('disclaimerAccepted', 'true');
+
+    // Hide disclaimer
+    document.querySelector('#disclaimer').classList.remove('visible');
+    document.querySelector('body').classList.remove('overlay');
 }
 
 function stickyNavbarOnScroll() {
