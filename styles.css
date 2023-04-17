@@ -107,16 +107,20 @@ header .nav-primary-top .user-menu i.chevron {
   color: var(--gray-color-dark);
   font-size: 10px;
 }
-header .nav-primary-top #sidenavCollapse {
+header .nav-primary-top #sidenav-left-toggle-btn {
   font-weight: 600;
 }
-header .nav-primary-top #sidenavCollapse i {
+header .nav-primary-top #sidenav-left-toggle-btn i {
   margin-right: 5px;
 }
 @media only screen and (max-width: 991px) {
-  header .nav-primary-top #sidenavCollapse span {
+  header .nav-primary-top #sidenav-left-toggle-btn span {
     display: none !important;
   }
+}
+header .nav-primary-top .search-btn {
+  padding-left: 0;
+  width: 50px;
 }
 header .nav-primary-middle {
   height: 5em;
@@ -185,6 +189,7 @@ header #sidenav-left {
 }
 header #sidenav-left:not(.active) {
   width: 0;
+  border-top: none;
 }
 header #sidenav-left .btn.action {
   background-color: var(--main-color);
@@ -215,6 +220,41 @@ header #sidenav-left .sidenav-left-newsletter p {
 }
 header #sidenav-left .sidenav-left-newsletter button {
   width: 230px;
+}
+header #searchbar {
+  background-color: white;
+  position: fixed;
+  z-index: 2;
+  top: 64px;
+  left: 0;
+  height: 64px;
+  border-top: 2px solid var(--gray-color-dark);
+  width: 100%;
+  overflow: auto;
+  transition: height 0.3s ease-in-out;
+}
+header #searchbar:not(.active) {
+  height: 0;
+  border-top: none;
+}
+header #searchbar input {
+  font-size: 14px;
+}
+header #searchbar i {
+  position: absolute;
+  top: 21px;
+  left: 20px;
+  font-size: 20px;
+}
+header #searchbar button.btn {
+  position: absolute;
+  right: 30px;
+  top: 16px;
+  height: 32px;
+  width: 64px;
+  font-size: 15px;
+  padding: 0;
+  background-color: var(--main-color);
 }
 
 main {

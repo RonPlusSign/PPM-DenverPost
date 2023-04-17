@@ -133,7 +133,7 @@ header {
       }
     }
 
-    #sidenavCollapse {
+    #sidenav-left-toggle-btn {
       font-weight: 600;
 
       i {
@@ -145,6 +145,11 @@ header {
           display: none !important;
         }
       }
+    }
+
+    .search-btn {
+      padding-left: 0;
+      width: 50px;
     }
   }
 
@@ -212,6 +217,7 @@ header {
   #sidenav-left {
     &:not(.active) {
       width: 0;
+      border-top: none;
     }
 
     background-color: white;
@@ -265,6 +271,46 @@ header {
       button {
         width: 230px;
       }
+    }
+  }
+
+  #searchbar {
+    &:not(.active) {
+      height: 0;
+      border-top: none;
+    }
+
+    background-color: white;
+    position: fixed;
+    z-index: 2;
+    top: 64px;
+    left: 0;
+    height: 64px;
+    border-top: 2px solid var(--gray-color-dark);
+    width: 100%;
+    overflow: auto;
+    transition: height 0.3s ease-in-out;
+
+    input {
+      font-size: 14px;
+    }
+
+    i {
+      position: absolute;
+      top: 21px;
+      left: 20px;
+      font-size: 20px;
+    }
+
+    button.btn {
+      position: absolute;
+      right: 30px;
+      top: 16px;
+      height: 32px;
+      width: 64px;
+      font-size: 15px;
+      padding: 0;
+      background-color: var(--main-color);
     }
   }
 }
