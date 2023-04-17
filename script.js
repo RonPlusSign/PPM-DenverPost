@@ -19,7 +19,7 @@ function onUserIconClick(element) {
 }
 
 // Click event for sidebar toggle
-function onSidenavCollapseClick(sidenavCollapseBtn) {
+function onLeftSidenavToggle(sidenavCollapseBtn) {
     if (Array.from(document.querySelector('#sidenav-left').classList).includes('active')) {
         const scroll = document.documentElement.scrollTop || document.body.scrollTop;
         if (scroll <= scrollThreshold) {

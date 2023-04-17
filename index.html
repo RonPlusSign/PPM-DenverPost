@@ -44,8 +44,7 @@
 <header>
     <div id="sticky-navbar" class="nav-primary-top row align-content-center container">
         <div class="col col-3 col-md-4 p-0 d-flex justify-content-start">
-            <!-- TODO: Make left sidenav work -->
-            <button type="button" class="btn" id="sidenavCollapse" onclick="onSidenavCollapseClick(this)">
+            <button type="button" class="btn" id="sidenavCollapse" onclick="onLeftSidenavToggle(this)">
                 <i class="fas fa-bars m-auto"></i>
                 <span>All sections</span>
             </button>
@@ -76,9 +75,9 @@
         </div>
     </div>
 
-
+    <!-- Left sidenav -->
     <div id="sidenav-left" class="border-end">
-        <div class="mx-2 sidenav-left-content pb-5 mb-5">
+        <div class="mx-2 sidenav-left-content mb-5">
             <div class="row m-4">
                 <button class="btn action rounded-1 w-100">Subscribe Now</button>
             </div>
