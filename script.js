@@ -17,21 +17,24 @@ function stickyNavbarOnScroll() {
 }
 
 // Show right sidenav with login/subscribe and change chevron
-function onUserIconClick(element) {
-    // Change chevron
-    element.children[1].classList.toggle('fa-chevron-down');
-    element.children[1].classList.toggle('fa-chevron-up');
-    // TODO: Show right sidenav
+function onRightSidenavToggle() {
+    // Close everything else
+    if (isLeftSidenavOpen()) closeLeftSidenav();
+    if (isSearchbarOpen()) closeSearchbar();
+
+    // Toggle sidenav
+    if (isRightSidenavOpen()) closeRightSidenav();
+    else {
+        showStickyNavbar();
+        openRightSidenav();
+    }
 }
 
 // Click event for sidebar toggle
-function onLeftSidenavToggle(sidenavCollapseBtn) {
-    // Change icon
-    sidenavCollapseBtn.children[0].classList.toggle('fa-bars');
-    sidenavCollapseBtn.children[0].classList.toggle('fa-times');
-
+function onLeftSidenavToggle() {
     // Close everything else
     if (isSearchbarOpen()) closeSearchbar();
+    if (isRightSidenavOpen()) closeRightSidenav();
 
     // Toggle sidenav
     if (isLeftSidenavOpen()) closeLeftSidenav();
@@ -76,13 +79,10 @@ function dateForWeatherWidget() {
     document.querySelector('#weather-date-sidenav').innerHTML = `${day}, ${month} ${dayNumber}${cardinalSuffix(dayNumber)} ${year}`;
 }
 
-function toggleSearchbar(element) {
-    // Change icon
-    element.children[0].classList.toggle('fa-search');
-    element.children[0].classList.toggle('fa-times');
-
+function toggleSearchbar() {
     // Close everything else
     if (isLeftSidenavOpen()) closeLeftSidenav();
+    if (isRightSidenavOpen()) closeRightSidenav();
 
     // Toggle searchbar
     if (isSearchbarOpen()) closeSearchbar();
@@ -138,4 +138,22 @@ function closeSearchbar() {
     document.querySelector('#searchbar-toggle-btn').children[0].classList.remove('fa-times');
     document.querySelector('#searchbar-toggle-btn').children[0].classList.add('fa-search');
     stickyNavbarOnScroll();
+}
+
+function isRightSidenavOpen() {
+    return Array.from(document.querySelector('#sidenav-right').classList).includes('active');
+}
+
+function openRightSidenav() {
+    document.querySelector('#sidenav-right').classList.add('active');
+    document.querySelector('body').classList.add('overlay');
+    document.querySelector('#sidenav-right-toggle-btn').children[1].classList.remove('fa-chevron-down');
+    document.querySelector('#sidenav-right-toggle-btn').children[1].classList.add('fa-chevron-up');
+}
+
+function closeRightSidenav() {
+    document.querySelector('#sidenav-right').classList.remove('active');
+    document.querySelector('body').classList.remove('overlay');
+    document.querySelector('#sidenav-right-toggle-btn').children[1].classList.remove('fa-chevron-up');
+    document.querySelector('#sidenav-right-toggle-btn').children[1].classList.add('fa-chevron-down');
 }

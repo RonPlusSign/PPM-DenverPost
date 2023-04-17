@@ -194,6 +194,9 @@ header #sidenav-left:not(.active) {
 header #sidenav-left .btn.action {
   background-color: var(--main-color);
 }
+header #sidenav-left .sidenav-left-content {
+  min-height: 65vh;
+}
 header #sidenav-left .sidenav-left-content ul {
   list-style: none;
 }
@@ -219,6 +222,38 @@ header #sidenav-left .sidenav-left-newsletter p {
   font-size: 14px;
 }
 header #sidenav-left .sidenav-left-newsletter button {
+  width: 230px;
+}
+header #sidenav-right {
+  background-color: white;
+  position: fixed;
+  z-index: 2;
+  top: 64px;
+  right: 0;
+  height: calc(100% - 64px);
+  border-top: 1px solid black;
+  width: 300px;
+  overflow: auto;
+  transition: width 0.3s ease-in-out;
+}
+header #sidenav-right:not(.active) {
+  width: 0;
+  border-top: none;
+}
+header #sidenav-right .btn.action {
+  background-color: var(--main-color);
+  height: 40px;
+}
+header #sidenav-right .sidenav-right-content {
+  min-height: 65vh;
+}
+header #sidenav-right .sidenav-right-newsletter {
+  border-top: 1px solid black;
+}
+header #sidenav-right .sidenav-right-newsletter p {
+  font-size: 14px;
+}
+header #sidenav-right .sidenav-right-newsletter button {
   width: 230px;
 }
 header #searchbar {

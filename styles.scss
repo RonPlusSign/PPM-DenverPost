@@ -236,6 +236,8 @@ header {
     }
 
     .sidenav-left-content {
+      min-height: 65vh;
+
       ul {
         list-style: none;
 
@@ -262,6 +264,45 @@ header {
     }
 
     .sidenav-left-newsletter {
+      border-top: 1px solid black;
+
+      p {
+        font-size: 14px;
+      }
+
+      button {
+        width: 230px;
+      }
+    }
+  }
+
+  #sidenav-right {
+    &:not(.active) {
+      width: 0;
+      border-top: none;
+    }
+
+    background-color: white;
+    position: fixed;
+    z-index: 2;
+    top: 64px;
+    right: 0;
+    height: calc(100% - 64px);
+    border-top: 1px solid black;
+    width: 300px;
+    overflow: auto;
+    transition: width 0.3s ease-in-out;
+
+    .btn.action {
+      background-color: var(--main-color);
+      height: 40px;
+    }
+
+    .sidenav-right-content {
+      min-height: 65vh;
+    }
+
+    .sidenav-right-newsletter {
       border-top: 1px solid black;
 
       p {

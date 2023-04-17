@@ -62,13 +62,12 @@
                 <a class="link-light link-underline link-underline-opacity-0" href="#">Log in </a>
             </button>
 
-            <!-- TODO: Make right sidenav work -->
-            <button type="button" class="btn user-menu p-0" onclick="onUserIconClick(this)">
+            <button id="sidenav-right-toggle-btn" type="button" class="btn user-menu p-0" onclick="onRightSidenavToggle(this)">
                 <i class="fas fa-user"></i>
                 <i class="chevron fas fa-chevron-down"></i>
             </button>
 
-            <button id="searchbar-toggle-btn" type="button" class="btn search-btn" onclick="toggleSearchbar(this)">
+            <button id="searchbar-toggle-btn" type="button" class="btn search-btn" onclick="toggleSearchbar()">
                 <i class="fas fa-search"></i>
             </button>
         </div>
@@ -119,7 +118,18 @@
     </div>
 
     <div id="sidenav-right">
-        <!-- TODO: Add right sidenav -->
+        <div class="mx-2 sidenav-right-content mb-5">
+            <div class="row mx-4 my-2 mt-4">
+                <button class="btn action rounded-1 w-100">Subscribe</button>
+            </div>
+            <div class="row mx-4 my-2 mt-4">
+                <button class="btn action rounded-1 w-100">Login</button>
+            </div>
+        </div>
+        <div class="mx-auto sidenav-right-newsletter d-grid py-3">
+            <p class="row w-100 mx-0 text-center fw-bold justify-content-center mb-2">Sign Up for Newsletters and Alerts</p>
+            <button class="row btn action rounded-1 mx-auto">Sign Up</button>
+        </div>
     </div>
 
     <div id="searchbar">
