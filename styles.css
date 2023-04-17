@@ -328,7 +328,6 @@ main .subscriber-only:before {
   text-transform: uppercase;
   background-color: var(--background-color);
   display: block;
-  width: -moz-fit-content;
   width: fit-content;
   margin: auto auto 3px 0;
   padding: 0 5px 2px 5px;
@@ -393,13 +392,11 @@ main .counter-list h3.title {
   color: var(--main-color);
 }
 main .counter-list ul.counter {
-  -moz-columns: 2;
-       columns: 2;
+  columns: 2;
 }
 @media only screen and (max-width: 576px) {
   main .counter-list ul.counter {
-    -moz-columns: 1;
-         columns: 1;
+    columns: 1;
   }
 }
 main .counter-list ul.counter li {
@@ -647,7 +644,6 @@ main .photos .first-article span {
 }
 main .photos .image-container {
   position: relative;
-  height: -moz-fit-content;
   height: fit-content;
 }
 main .photos .image-container i {
@@ -687,8 +683,8 @@ main .photos .btn-show-more:before {
   border-bottom: 1px solid var(--gray-color-light);
   border-left: 1px solid var(--gray-color-light);
   height: 2.1875em;
-  top: -0.3125em;
-  transform: rotate(-45deg) translateY(-50%);
+  top: -1.1em;
+  transform: rotate(-45deg);
   width: 2.1875em;
 }
 main .events button {
@@ -957,4 +953,6 @@ footer .site-info .site-info-content p, footer .site-info .site-info-content li.
 footer .site-info .site-info-content p a, footer .site-info .site-info-content li.footer-item a {
   color: var(--gray-color-dark);
   text-decoration: none;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */
