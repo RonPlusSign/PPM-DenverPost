@@ -120,7 +120,7 @@ header .nav-primary-top #sidenav-left-toggle-btn i {
 }
 header .nav-primary-top .search-btn {
   padding-left: 0;
-  width: 50px;
+  width: 40px;
 }
 header .nav-primary-middle {
   height: 5em;
@@ -328,6 +328,7 @@ main .subscriber-only:before {
   text-transform: uppercase;
   background-color: var(--background-color);
   display: block;
+  width: -moz-fit-content;
   width: fit-content;
   margin: auto auto 3px 0;
   padding: 0 5px 2px 5px;
@@ -392,11 +393,13 @@ main .counter-list h3.title {
   color: var(--main-color);
 }
 main .counter-list ul.counter {
-  columns: 2;
+  -moz-columns: 2;
+       columns: 2;
 }
 @media only screen and (max-width: 576px) {
   main .counter-list ul.counter {
-    columns: 1;
+    -moz-columns: 1;
+         columns: 1;
   }
 }
 main .counter-list ul.counter li {
@@ -644,6 +647,7 @@ main .photos .first-article span {
 }
 main .photos .image-container {
   position: relative;
+  height: -moz-fit-content;
   height: fit-content;
 }
 main .photos .image-container i {
@@ -953,6 +957,4 @@ footer .site-info .site-info-content p, footer .site-info .site-info-content li.
 footer .site-info .site-info-content p a, footer .site-info .site-info-content li.footer-item a {
   color: var(--gray-color-dark);
   text-decoration: none;
-}
-
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
